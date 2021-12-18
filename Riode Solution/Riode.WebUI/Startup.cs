@@ -23,12 +23,16 @@ namespace Riode.WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRouting(cfg => {
+                cfg.LowercaseUrls = true;
+            });
         }
 
 
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(cfg =>
             {
