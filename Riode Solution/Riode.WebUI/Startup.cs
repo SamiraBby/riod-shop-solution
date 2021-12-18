@@ -18,7 +18,7 @@ namespace Riode.WebUI
         public Startup(IConfiguration configuration)
         {
             this.configuration = configuration;
-
+                                                                                                                                                      
         }
         public void ConfigureServices(IServiceCollection services)
         {
