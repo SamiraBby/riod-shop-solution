@@ -41,7 +41,14 @@
 
     <link rel="stylesheet" type="text/css" href="~/assets/css/demo23.min.css">
     @*<link rel="stylesheet" type="text/css" href="~/assets/css/demo1.min.css">*@
-<link href="~/assets/css/style.min.css" rel="stylesheet" />
+    <link href="~/assets/css/style.min.css" rel="stylesheet" />
+    <style>
+        textarea.form-control{
+     resize:none;
+     min-height:300px;
+        }
+    </style>
+    @RenderSection("addcss", required: false);
 
 </head>
 
@@ -141,7 +148,7 @@
                             </div>
                         </a>
                         <span class="divider"></span>
-                        <a asp-controller="Account" asp-action= "Wishlist" class="wishlist">
+                        <a asp-controller="Account" asp-action="Wishlist" class="wishlist">
                             <i class="d-icon-heart"></i>
                         </a>
                         <span class="divider"></span>
@@ -240,7 +247,7 @@
             <div class="header-bottom d-lg-show">
                 <div class="container">
                     <div class="header-left">
-                        <partial name="_Sidebar"/>
+                        <partial name="_Sidebar" />
                     </div>
                     <div class="header-right">
                         <a href="https://d-themes.com/buynow/riodehtml" target="_blank" class="ml-6">Buy Riode!</a>
@@ -345,7 +352,7 @@
                                         <a href="cart.html">View Cart</a>
                                     </li>
                                     <li>
-                                        <a asp-controller="Account" asp-action= "Wishlist">My Wishlist</a>
+                                        <a asp-controller="Account" asp-action="Wishlist">My Wishlist</a>
                                     </li>
                                     <li>
                                         <a href="#">Track My Order</a>
@@ -424,7 +431,7 @@
             <i class="d-icon-volume"></i>
             <span>Categories</span>
         </a>
-        <a asp-controller="Account" asp-action= "Wishlist" class="sticky-link">
+        <a asp-controller="Account" asp-action="Wishlist" class="sticky-link">
             <i class="d-icon-heart"></i>
             <span>Wishlist</span>
         </a>
@@ -642,7 +649,8 @@
         </div>*@
 
     <!-- Plugins JS File -->
-    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
+    @*<script src="~/assets/vendor/jquery/jquery.min.js"></script>*@
+    <script src="~/libs/jquery/jquery.min.js"></script>
     <script src="~/assets/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
     <script src="~/assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
@@ -655,20 +663,21 @@
     <script src="~/assets/js/main.min.js"></script>
 
     @*<script>
-        $(document).ready(function(){
+                $(document).ready(function(){
 
 
-$.ajax({
-    type: "POST",
-    url: "https://localhost:44397/home/contact",
-    success: function (response) {
-        console.log(response);
-    }
-});
-
-
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:44397/home/contact",
+            success: function (response) {
+                console.log(response);
+            }
         });
-    </script>*@
+
+
+                });
+            </script>*@
+    @RenderSection("addjs", required: false);
 </body>
 
 
